@@ -60,7 +60,9 @@
 	font-weight: 500;
 	font-size: 35px;
 }
-.box:hover {
+.box:hover,
+.box:active,
+.box:focus {
 	-webkit-box-shadow: inset 0px 0px 70px -20px rgba(72, 72, 72, 1);
 	-moz-box-shadow: inset 0px 0px 70px -20px rgba(72, 72, 72, 1);
 	box-shadow: inset 0px 0px 70px -20px rgba(72, 72, 72, 1);
