@@ -62,8 +62,8 @@
 	font-size: 35px;
 }
 .box:hover,
-.box:active,
-.box:focus {
+.box:focus,
+.box:active {
 	-webkit-box-shadow: inset 0px 0px 70px -20px rgba(72, 72, 72, 1);
 	-moz-box-shadow: inset 0px 0px 70px -20px rgba(72, 72, 72, 1);
 	box-shadow: inset 0px 0px 70px -20px rgba(72, 72, 72, 1);
@@ -93,8 +93,8 @@ a {
 .boxDarkMode {
 }
 .boxDarkMode:hover,
-.boxDarkMode:active,
-.boxDarkMode:focus {
+.boxDarkMode:focus,
+.boxDarkMode:active {
 	-webkit-box-shadow: inset 0px 0px 70px -20px rgb(0, 0, 0);
 	-moz-box-shadow: inset 0px 0px 70px -20px rgb(0, 0, 0);
 	box-shadow: inset 0px 0px 70px -20px rgb(0, 0, 0);
