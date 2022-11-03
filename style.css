@@ -54,6 +54,7 @@
 	justify-content: center;
 	align-items: center;
 	transition: all 0.2s linear;
+	cursor: pointer;
 }
 .box h2 {
 	font-family: 'Raleway', sans-serif;
@@ -83,4 +84,18 @@ a {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+.mainDarkMode {
+	background-color: rgb(29, 29, 29);
+	color: #fff;
+}
+.boxDarkMode {
+}
+.boxDarkMode:hover,
+.boxDarkMode:active,
+.boxDarkMode:focus {
+	-webkit-box-shadow: inset 0px 0px 70px -20px rgb(0, 0, 0);
+	-moz-box-shadow: inset 0px 0px 70px -20px rgb(0, 0, 0);
+	box-shadow: inset 0px 0px 70px -20px rgb(0, 0, 0);
 }

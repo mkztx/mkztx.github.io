@@ -13,3 +13,10 @@ if (Math.floor(window.innerHeight) > Math.floor(window.innerWidth)) {
 	const main = document.querySelector('.main');
 	main.style.flexDirection = 'row';
 }
+
+const main = document.querySelector('.main');
+main.classList.add('mainDarkMode');
+const box = document.querySelectorAll('.box');
+box.forEach((box) => {
+	box.classList.add('boxDarkMode');
+});
