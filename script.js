@@ -22,10 +22,10 @@ if (Math.floor(window.innerHeight) > Math.floor(window.innerWidth)) {
 // });
 
 //check for dark mode
-const box = document.querySelectorAll('.box');
-box.forEach((box) => {
-	box.setAttribute('aria-haspopup', 'true');
-});
+// const box = document.querySelectorAll('.box');
+// box.forEach((box) => {
+// 	box.setAttribute('aria-haspopup', 'true');
+// });
 if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 	console.log('dark mode');
 	const main = document.querySelector('.main');
