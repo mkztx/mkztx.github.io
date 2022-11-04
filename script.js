@@ -17,7 +17,7 @@ if (Math.floor(window.innerHeight) > Math.floor(window.innerWidth)) {
 }
 setDisplayMode();
 
-//TODO learn about that code (code from stackoverflow https://stackoverflow.com/questions/56393880/how-do-i-detect-dark-mode-using-javascript)
+//TODO learn about that code (code from stack-overflow https://stackoverflow.com/questions/56393880/how-do-i-detect-dark-mode-using-javascript)
 window
 	.matchMedia('(prefers-color-scheme: dark)')
 	.addEventListener('change', (event) => {
