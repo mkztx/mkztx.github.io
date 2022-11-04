@@ -71,7 +71,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	transition: all 0.2s linear;
+	transition: all 0.4s linear;
 	cursor: pointer;
 }
 .box h2 {
