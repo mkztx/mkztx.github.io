@@ -68,7 +68,7 @@
 }
 .box h2 {
 	font-family: 'Raleway', sans-serif;
-	font-weight: 500;
+	font-weight: 300;
 	font-size: 35px;
 }
 .box:hover,
@@ -119,4 +119,36 @@ a {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	padding: 20px;
+}
+.popUpBox p {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+}
+.popUpBox h1 {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 500;
+	font-size: 50px;
+	align-self: flex-start;
+}
+.info {
+	margin: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	height: 100%;
+	width: 100%;
+	gap: 50px;
+}
+
+.languages {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+}
+.languages img {
+	height: 100px;
 }
