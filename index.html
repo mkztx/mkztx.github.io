@@ -14,26 +14,104 @@
 	<body>
 		<div class="main">
 			<div class="name"><h1>MKZTX</h1></div>
-			<a href="" target="_blank">
-				<div class="box About" role="button" tabindex="0">
-					<h2>About me</h2>
-				</div>
-			</a>
-			<a href="" target="_blank">
-				<div class="box Sites" role="button" tabindex="0">
-					<h2>My sites</h2>
-				</div>
-			</a>
-			<a href="https://github.com/mkztx?tab=repositories" target="_blank">
+
+			<div
+				class="box About"
+				role="button"
+				tabindex="0"
+				aria-haspopup="true"
+			>
+				<h2>About me</h2>
+			</div>
+
+			<div
+				class="box Projects"
+				role="button"
+				tabindex="0"
+				aria-haspopup="true"
+			>
+				<h2>My projects</h2>
+			</div>
+
+			<a
+				href="https://github.com/mkztx?tab=repositories"
+				target="_blank"
+				aria-haspopup="true"
+			>
 				<div class="box Repos" role="button" tabindex="0">
 					<h2>My repos</h2>
 				</div>
 			</a>
-			<a href="" target="_blank">
-				<div class="box Future" role="button" tabindex="0">
-					<h2>My plans</h2>
-				</div>
-			</a>
+
+			<div
+				class="box Plans"
+				role="button"
+				tabindex="0"
+				aria-haspopup="true"
+			>
+				<h2>My plans</h2>
+			</div>
+		</div>
+		<div
+			class="fullScreenBox"
+			style="
+				display: none;
+				height: 100%;
+				width: 100%;
+				position: fixed;
+				top: 0;
+				left: 0;
+				background-color: rgba(0, 0, 0, 0.5);
+			"
+		>
+			<div
+				class="aboutME popUpBox"
+				style="
+					display: none;
+					background-color: #fff;
+					position: fixed;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					height: 80%;
+					width: 80%;
+				"
+				onclick="event.stopPropagation();"
+			>
+				<h1>About me</h1>
+			</div>
+			<div
+				class="myProjects popUpBox"
+				style="
+					display: none;
+					background-color: #fff;
+					position: fixed;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					height: 80%;
+					width: 80%;
+				"
+				onclick="event.stopPropagation();"
+			>
+				<h1>My projects</h1>
+			</div>
+			<div
+				class="myPlans popUpBox"
+				style="
+					display: none;
+					background-color: #fff;
+					position: fixed;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					height: 80%;
+					width: 80%;
+				"
+				onclick="event.stopPropagation();"
+			>
+				<h1>My plans</h1>
+			</div>
 		</div>
 	</body>
 </html>

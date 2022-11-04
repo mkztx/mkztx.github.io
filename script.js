@@ -34,4 +34,64 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 	box.forEach((box) => {
 		box.classList.add('boxDarkMode');
 	});
+	const name = document.querySelector('.name');
+	const h1 = name.querySelector('h1');
+	h1.classList.add('nameDarkBackground');
+	const popUpBox = document.querySelectorAll('.popUpBox');
+	popUpBox.forEach((popUpBox) => {
+		popUpBox.classList.add('popUpBoxDarkMode');
+	});
 }
+
+//buttons to open windows
+const buttons = document.querySelectorAll('.box');
+buttons.forEach((button) => {
+	button.addEventListener('click', () => {
+		const window = button.getAttribute('class').split(' ')[1];
+
+		openingWindow(window);
+	});
+});
+
+function openingWindow(name) {
+	const fullScreenBox = document.querySelector('.fullScreenBox');
+	switch (name) {
+		case 'About':
+			const about = document.querySelector('.aboutME');
+			about.style.display = 'block';
+			changeFullScreenBox();
+			fullScreenBox.addEventListener('click', () => {
+				about.style.display = 'none';
+				fullScreenBox.style.display = 'none';
+			});
+			break;
+		case 'Projects':
+			const Projects = document.querySelector('.myProjects');
+			Projects.style.display = 'block';
+			changeFullScreenBox();
+			fullScreenBox.addEventListener('click', () => {
+				Projects.style.display = 'none';
+				fullScreenBox.style.display = 'none';
+			});
+			break;
+		case 'Plans':
+			const Future = document.querySelector('.myPlans');
+			Future.style.display = 'block';
+			changeFullScreenBox();
+			fullScreenBox.addEventListener('click', () => {
+				Future.style.display = 'none';
+				fullScreenBox.style.display = 'none';
+			});
+			break;
+	}
+}
+
+function changeFullScreenBox() {
+	const fullScreenBox = document.querySelector('.fullScreenBox');
+	fullScreenBox.style.display = 'block';
+}
+// function hiddingFullScreenBox(window) {
+// 	const fullScreenBox = document.querySelector('.fullScreenBox');
+// 	fullScreenBox.style.display = 'none';
+// 	window.style.display = 'none';
+// }

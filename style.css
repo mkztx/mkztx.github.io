@@ -36,6 +36,16 @@
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+.nameDarkBackground {
+	background-image: linear-gradient(
+		90deg,
+		rgb(222, 93, 29),
+		rgb(220, 22, 22),
+		rgb(226, 174, 42),
+		rgb(222, 93, 29),
+		rgb(220, 22, 22)
+	) !important;
+}
 @keyframes animateBg {
 	0% {
 		background-position: 0% 0%;
@@ -98,4 +108,16 @@ a {
 	-webkit-box-shadow: inset 0px 0px 70px -20px rgb(0, 0, 0);
 	-moz-box-shadow: inset 0px 0px 70px -20px rgb(0, 0, 0);
 	box-shadow: inset 0px 0px 70px -20px rgb(0, 0, 0);
+}
+
+.popUpBoxDarkMode {
+	background-color: rgb(29, 29, 29) !important;
+	color: #fff !important;
+}
+
+.popUpBox {
+	display: flex !important;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
