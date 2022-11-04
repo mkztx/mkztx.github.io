@@ -13,34 +13,47 @@ if (Math.floor(window.innerHeight) > Math.floor(window.innerWidth)) {
 	const main = document.querySelector('.main');
 	main.style.flexDirection = 'row';
 }
+setDisplayMode();
 
-// const main = document.querySelector('.main');
-// main.classList.add('mainDarkMode');
-// const box = document.querySelectorAll('.box');
-// box.forEach((box) => {
-// 	box.classList.add('boxDarkMode');
-// });
+//TODO learn about that code (code from stackoverflow https://stackoverflow.com/questions/56393880/how-do-i-detect-dark-mode-using-javascript)
+window
+	.matchMedia('(prefers-color-scheme: dark)')
+	.addEventListener('change', (event) => {
+		setDisplayMode();
+	});
 
-//check for dark mode
-// const box = document.querySelectorAll('.box');
-// box.forEach((box) => {
-// 	box.setAttribute('aria-haspopup', 'true');
-// });
-if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-	console.log('dark mode');
-	const main = document.querySelector('.main');
-	main.classList.add('mainDarkMode');
-	const box = document.querySelectorAll('.box');
-	box.forEach((box) => {
-		box.classList.add('boxDarkMode');
-	});
-	const name = document.querySelector('.name');
-	const h1 = name.querySelector('h1');
-	h1.classList.add('nameDarkBackground');
-	const popUpBox = document.querySelectorAll('.popUpBox');
-	popUpBox.forEach((popUpBox) => {
-		popUpBox.classList.add('popUpBoxDarkMode');
-	});
+function setDisplayMode() {
+	if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		console.log('dark mode');
+		const main = document.querySelector('.main');
+		main.classList.add('mainDarkMode');
+		const box = document.querySelectorAll('.box');
+		box.forEach((box) => {
+			box.classList.add('boxDarkMode');
+		});
+		const name = document.querySelector('.name');
+		const h1 = name.querySelector('h1');
+		h1.classList.add('nameDarkBackground');
+		const popUpBox = document.querySelectorAll('.popUpBox');
+		popUpBox.forEach((popUpBox) => {
+			popUpBox.classList.add('popUpBoxDarkMode');
+		});
+	} else {
+		console.log('light mode');
+		const main = document.querySelector('.main');
+		main.classList.remove('mainDarkMode');
+		const box = document.querySelectorAll('.box');
+		box.forEach((box) => {
+			box.classList.remove('boxDarkMode');
+		});
+		const name = document.querySelector('.name');
+		const h1 = name.querySelector('h1');
+		h1.classList.remove('nameDarkBackground');
+		const popUpBox = document.querySelectorAll('.popUpBox');
+		popUpBox.forEach((popUpBox) => {
+			popUpBox.classList.remove('popUpBoxDarkMode');
+		});
+	}
 }
 
 //buttons to open windows
@@ -58,7 +71,7 @@ function openingWindow(name) {
 	switch (name) {
 		case 'About':
 			const about = document.querySelector('.aboutME');
-			about.style.display = 'block';
+			about.style.display = 'flex';
 			changeFullScreenBox();
 			fullScreenBox.addEventListener('click', () => {
 				about.style.display = 'none';
@@ -67,7 +80,7 @@ function openingWindow(name) {
 			break;
 		case 'Projects':
 			const Projects = document.querySelector('.myProjects');
-			Projects.style.display = 'block';
+			Projects.style.display = 'flex';
 			changeFullScreenBox();
 			fullScreenBox.addEventListener('click', () => {
 				Projects.style.display = 'none';
@@ -76,7 +89,7 @@ function openingWindow(name) {
 			break;
 		case 'Plans':
 			const Future = document.querySelector('.myPlans');
-			Future.style.display = 'block';
+			Future.style.display = 'flex';
 			changeFullScreenBox();
 			fullScreenBox.addEventListener('click', () => {
 				Future.style.display = 'none';
