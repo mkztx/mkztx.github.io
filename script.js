@@ -160,6 +160,7 @@ async function animationOnLoad() {
 		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 			boxes[i].classList.add('animationLength');
 			boxes[i].classList.add('boxAnimationOnLoadDark');
+			deleteAnimation(boxes[i], 'boxAnimationOnLoadDark');
 		} else {
 			boxes[i].classList.add('animationLength');
 			boxes[i].classList.add('boxAnimationOnLoad');
