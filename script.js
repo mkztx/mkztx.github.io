@@ -167,10 +167,8 @@ async function animationOnLoad() {
 			deleteAnimation(boxes[i], 'boxAnimationOnLoad');
 		}
 		await timer(500);
-		// boxes[i].classList?.remove('boxAnimationOnLoadDark');
-		// boxes[i].classList?.remove('boxAnimationOnLoad');
-		// await timer(150);
 	}
+	await timer(1000);
 	boxes.forEach((box) => {
 		box.classList.remove('animationLength');
 	});
