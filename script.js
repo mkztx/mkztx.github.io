@@ -105,7 +105,7 @@ function changeFullScreenBox() {
 	const fullScreenBox = document.querySelector('.fullScreenBox');
 	fullScreenBox.style.display = 'block';
 }
-// function hiddingFullScreenBox(window) {
+// function hidingFullScreenBox(window) {
 // 	const fullScreenBox = document.querySelector('.fullScreenBox');
 // 	fullScreenBox.style.display = 'none';
 // 	window.style.display = 'none';
@@ -123,3 +123,54 @@ closeButtons.forEach((closeButton) => {
 		fullScreenBox.style.display = 'none';
 	});
 });
+
+// ! LEARN THIS PART OF CODE
+const timer = (ms) => new Promise((res) => setTimeout(res, ms));
+// async function animationOnLoad() {
+// 	const boxes = document.querySelectorAll('.box');
+// 	for (let i = 0; i < boxes.length; i++) {
+// 		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+// 			boxes[i].classList.add('animationLength');
+// 			boxes[i].classList.add('boxAnimationOnLoadDark');
+// 			if (i > 0) boxes[i - 1].classList.remove('boxAnimationOnLoadDark');
+// 		} else {
+// 			boxes[i].classList.add('animationLength');
+// 			boxes[i].classList.add('boxAnimationOnLoad');
+// 			if (i > 0) boxes[i - 1].classList.remove('boxAnimationOnLoad');
+// 		}
+// 		await timer(500);
+// 		// boxes[i].classList?.remove('boxAnimationOnLoadDark');
+// 		// boxes[i].classList?.remove('boxAnimationOnLoad');
+// 		// await timer(150);
+// 	}
+// 	const last = boxes.length;
+// 	boxes[last - 1].classList?.remove('boxAnimationOnLoad');
+// 	boxes[last - 1].classList?.remove('boxAnimationOnLoadDark');
+// 	boxes.forEach((box) => {
+// 		box.classList.remove('animationLength');
+// 	});
+// }
+async function deleteAnimation(box, name) {
+	await timer(1000);
+	box.classList.remove(`${name}`);
+}
+async function animationOnLoad() {
+	const boxes = document.querySelectorAll('.box');
+	for (let i = 0; i < boxes.length; i++) {
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			boxes[i].classList.add('animationLength');
+			boxes[i].classList.add('boxAnimationOnLoadDark');
+		} else {
+			boxes[i].classList.add('animationLength');
+			boxes[i].classList.add('boxAnimationOnLoad');
+			deleteAnimation(boxes[i], 'boxAnimationOnLoad');
+		}
+		await timer(500);
+		// boxes[i].classList?.remove('boxAnimationOnLoadDark');
+		// boxes[i].classList?.remove('boxAnimationOnLoad');
+		// await timer(150);
+	}
+	boxes.forEach((box) => {
+		box.classList.remove('animationLength');
+	});
+}
