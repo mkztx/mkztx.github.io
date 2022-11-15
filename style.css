@@ -23,6 +23,7 @@ body {
 	left: 1rem;
 }
 .name h1 {
+	color: #000;
 	font-size: 4rem;
 	opacity: 0;
 	font-family: 'Raleway', sans-serif;
@@ -45,7 +46,7 @@ body {
 		#71c66c,
 		#1cffd2
 	);
-	background-color: #000;
+	background-color: transparent;
 	background-size: 400% 100%;
 	-webkit-background-clip: text;
 	background-clip: text;

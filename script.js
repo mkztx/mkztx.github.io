@@ -37,6 +37,7 @@ function setDisplayMode() {
 		const name = document.querySelector('.name');
 		const h1 = name.querySelector('h1');
 		h1.classList.add('nameDarkBackground');
+		h1.style.color = '#fff';
 		const popUpBox = document.querySelectorAll('.popUpBox');
 		popUpBox.forEach((popUpBox) => {
 			popUpBox.classList.add('popUpBoxDarkMode');
