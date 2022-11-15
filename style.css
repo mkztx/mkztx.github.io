@@ -23,9 +23,11 @@ body {
 	left: 1rem;
 }
 .name h1 {
-	font-size: 90px;
+	font-size: 4rem;
+	opacity: 0;
 	font-family: 'Raleway', sans-serif;
 	font-weight: 300;
+	transition: opacity 0.3s linear, font-size 0.3s linear;
 	animation: animateBg 12s linear infinite;
 	/* background-image: linear-gradient(
 		90deg,

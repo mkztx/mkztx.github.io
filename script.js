@@ -157,6 +157,7 @@ async function deleteAnimation(box, name) {
 }
 async function animationOnLoad() {
 	const boxes = document.querySelectorAll('.box');
+	await timer(200);
 	for (let i = 0; i < boxes.length; i++) {
 		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 			boxes[i].classList.add('animationLength');
@@ -173,4 +174,11 @@ async function animationOnLoad() {
 	boxes.forEach((box) => {
 		box.classList.remove('animationLength');
 	});
+}
+
+async function animateNameOnLoad() {
+	const name = document.querySelector('.name');
+	const h1 = name.querySelector('h1');
+	h1.style.opacity = '1';
+	h1.style.fontSize = '5rem';
 }
