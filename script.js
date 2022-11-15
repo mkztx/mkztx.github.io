@@ -6,6 +6,7 @@ if (Math.floor(window.innerHeight) > Math.floor(window.innerWidth)) {
 	const name = document.querySelector('.name');
 	name.style.position = 'relative';
 	name.style.top = 'unset';
+	name.style.left = 'unset';
 	name.classList.add('placeholder');
 	const info = document.querySelector('.info');
 	info.style.marginTop = '20px';
