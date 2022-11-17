@@ -25,6 +25,7 @@
 				role="button"
 				tabindex="0"
 				aria-haspopup="true"
+				onclick="swipeBody('X',100)"
 			>
 				<h2>📍 About me</h2>
 			</div>
@@ -34,6 +35,7 @@
 				role="button"
 				tabindex="0"
 				aria-haspopup="true"
+				onclick="swipeBody('Y',-100)"
 			>
 				<h2>📊 My project</h2>
 			</div>
@@ -53,173 +55,13 @@
 				role="button"
 				tabindex="0"
 				aria-haspopup="true"
+				onclick="swipeBody('X',-100)"
 			>
 				<h2>📈 My plans</h2>
 			</div>
 		</div>
-		<div
-			class="fullScreenBox"
-			style="
-				display: none;
-				height: 100%;
-				width: 100%;
-				position: fixed;
-				top: 0;
-				left: 0;
-				background-color: rgba(0, 0, 0, 0.5);
-				cursor: pointer;
-			"
-		>
-			<div
-				class="aboutME popUpBox"
-				style="
-					display: none;
-					background-color: #fff;
-					position: fixed;
-					top: 50%;
-					left: 50%;
-					transform: translate(-50%, -50%);
-					height: 80%;
-					width: 80%;
-				"
-				onclick="event.stopPropagation();"
-			>
-				<div
-					class="close"
-					style="
-						position: absolute;
-						top: 0;
-						right: 0;
-						height: 30px;
-						width: 30px;
-						background-color: rgb(221, 221, 221);
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						cursor: pointer;
-						margin: 2px;
-						font-size: 25px;
-						font-family: 'Montserrat', sans-serif;
-						font-weight: 600;
-						color: rgb(103, 103, 103);
-					"
-					type="button"
-					tabindex="0"
-				>
-					X
-				</div>
-				<div class="info">
-					<h1>About me</h1>
-					<p>
-						Lorem ipsum dolor sit amet consectetur, adipisicing
-						elit. Praesentium dolorem soluta dolores reiciendis, et
-						mollitia officiis quia dolor repellendus quos enim!
-						Autem, aliquid qui, quos a unde reprehenderit facere
-						asperiores, quibusdam suscipit odit velit numquam ipsa
-						hic et ab esse distinctio corporis deleniti.
-						Necessitatibus labore nemo atque eum voluptatibus quo
-						voluptatum hic vel facilis. Neque dicta officia laborum
-						excepturi eaque tempora sunt provident culpa dignissimos
-						dolor! Culpa, quis! Explicabo ducimus facere omnis,
-						facilis, repellat nemo consectetur velit quo deserunt
-						eligendi, ipsa aliquid molestias id quisquam? Dolores
-						mollitia unde eaque beatae reprehenderit placeat, illo,
-						voluptatum ullam ipsam nisi aspernatur provident maxime?
-					</p>
-					<div class="languages">
-						<img src="./logos/html-logo.png" alt="html" />
-						<img src="./logos/css-edited.png" alt="css" />
-						<img
-							src="./logos/javascript-logo-vector.svg"
-							alt="javascript"
-						/>
-					</div>
-				</div>
-			</div>
-			<div
-				class="myProjects popUpBox"
-				style="
-					display: none;
-					background-color: #fff;
-					position: fixed;
-					top: 50%;
-					left: 50%;
-					transform: translate(-50%, -50%);
-					height: 80%;
-					width: 80%;
-				"
-				onclick="event.stopPropagation();"
-			>
-				<div
-					class="close"
-					style="
-						position: absolute;
-						top: 0;
-						right: 0;
-						height: 30px;
-						width: 30px;
-						background-color: rgb(221, 221, 221);
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						cursor: pointer;
-						margin: 2px;
-						font-size: 25px;
-						font-family: 'Montserrat', sans-serif;
-						font-weight: 600;
-						color: rgb(103, 103, 103);
-					"
-					type="button"
-					tabindex="0"
-				>
-					X
-				</div>
-				<div class="info">
-					<h1>My projects</h1>
-				</div>
-			</div>
-			<div
-				class="myPlans popUpBox"
-				style="
-					display: none;
-					background-color: #fff;
-					position: fixed;
-					top: 50%;
-					left: 50%;
-					transform: translate(-50%, -50%);
-					height: 80%;
-					width: 80%;
-				"
-				onclick="event.stopPropagation();"
-			>
-				<div
-					class="close"
-					style="
-						position: absolute;
-						top: 0;
-						right: 0;
-						height: 30px;
-						width: 30px;
-						background-color: rgb(221, 221, 221);
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						cursor: pointer;
-						margin: 2px;
-						font-size: 25px;
-						font-family: 'Montserrat', sans-serif;
-						font-weight: 600;
-						color: rgb(103, 103, 103);
-					"
-					type="button"
-					tabindex="0"
-				>
-					X
-				</div>
-				<div class="info">
-					<h1>My plans</h1>
-				</div>
-			</div>
-		</div>
+		<div class="pageAbout"></div>
+		<div class="pageProjects"></div>
+		<div class="pagePlans"></div>
 	</body>
 </html>

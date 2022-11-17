@@ -8,8 +8,6 @@ if (Math.floor(window.innerHeight) > Math.floor(window.innerWidth)) {
 	name.style.top = 'unset';
 	name.style.left = 'unset';
 	name.classList.add('placeholder');
-	const info = document.querySelector('.info');
-	info.style.marginTop = '20px';
 } else {
 	console.log('desktop');
 	// change main flex-direction to row
@@ -38,10 +36,6 @@ function setDisplayMode() {
 		const h1 = name.querySelector('h1');
 		h1.classList.add('nameDarkBackground');
 		h1.style.color = '#fff';
-		const popUpBox = document.querySelectorAll('.popUpBox');
-		popUpBox.forEach((popUpBox) => {
-			popUpBox.classList.add('popUpBoxDarkMode');
-		});
 	} else {
 		console.log('light mode');
 		const main = document.querySelector('.main');
@@ -53,105 +47,11 @@ function setDisplayMode() {
 		const name = document.querySelector('.name');
 		const h1 = name.querySelector('h1');
 		h1.classList.remove('nameDarkBackground');
-		const popUpBox = document.querySelectorAll('.popUpBox');
-		popUpBox.forEach((popUpBox) => {
-			popUpBox.classList.remove('popUpBoxDarkMode');
-		});
 	}
 }
-
-//buttons to open windows
-const buttons = document.querySelectorAll('.box');
-buttons.forEach((button) => {
-	button.addEventListener('click', () => {
-		const window = button.getAttribute('class').split(' ')[1];
-
-		openingWindow(window);
-	});
-});
-
-function openingWindow(name) {
-	const fullScreenBox = document.querySelector('.fullScreenBox');
-	switch (name) {
-		case 'About':
-			const about = document.querySelector('.aboutME');
-			about.style.display = 'flex';
-			changeFullScreenBox();
-			fullScreenBox.addEventListener('click', () => {
-				about.style.display = 'none';
-				fullScreenBox.style.display = 'none';
-			});
-			break;
-		case 'Projects':
-			const Projects = document.querySelector('.myProjects');
-			Projects.style.display = 'flex';
-			changeFullScreenBox();
-			fullScreenBox.addEventListener('click', () => {
-				Projects.style.display = 'none';
-				fullScreenBox.style.display = 'none';
-			});
-			break;
-		case 'Plans':
-			const Future = document.querySelector('.myPlans');
-			Future.style.display = 'flex';
-			changeFullScreenBox();
-			fullScreenBox.addEventListener('click', () => {
-				Future.style.display = 'none';
-				fullScreenBox.style.display = 'none';
-			});
-			break;
-	}
-}
-
-function changeFullScreenBox() {
-	const fullScreenBox = document.querySelector('.fullScreenBox');
-	fullScreenBox.style.display = 'block';
-}
-// function hidingFullScreenBox(window) {
-// 	const fullScreenBox = document.querySelector('.fullScreenBox');
-// 	fullScreenBox.style.display = 'none';
-// 	window.style.display = 'none';
-// }
-
-const closeButtons = document.querySelectorAll('.close');
-closeButtons.forEach((closeButton) => {
-	closeButton.addEventListener('click', () => {
-		const window = closeButton.parentElement
-			.getAttribute('class')
-			.split(' ')[0];
-		const toClose = document.querySelector(`.${window}`);
-		toClose.style.display = 'none';
-		const fullScreenBox = document.querySelector('.fullScreenBox');
-		fullScreenBox.style.display = 'none';
-	});
-});
 
 // ! LEARN THIS PART OF CODE
 const timer = (ms) => new Promise((res) => setTimeout(res, ms));
-// async function animationOnLoad() {
-// 	const boxes = document.querySelectorAll('.box');
-// 	for (let i = 0; i < boxes.length; i++) {
-// 		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-// 			boxes[i].classList.add('animationLength');
-// 			boxes[i].classList.add('boxAnimationOnLoadDark');
-// 			if (i > 0) boxes[i - 1].classList.remove('boxAnimationOnLoadDark');
-// 		} else {
-// 			boxes[i].classList.add('animationLength');
-// 			boxes[i].classList.add('boxAnimationOnLoad');
-// 			if (i > 0) boxes[i - 1].classList.remove('boxAnimationOnLoad');
-// 		}
-// 		await timer(500);
-// 		// boxes[i].classList?.remove('boxAnimationOnLoadDark');
-// 		// boxes[i].classList?.remove('boxAnimationOnLoad');
-// 		// await timer(150);
-// 	}
-// 	const last = boxes.length;
-// 	boxes[last - 1].classList?.remove('boxAnimationOnLoad');
-// 	boxes[last - 1].classList?.remove('boxAnimationOnLoadDark');
-// 	boxes.forEach((box) => {
-// 		box.classList.remove('animationLength');
-// 	});
-// }
 async function deleteAnimation(box, name) {
 	await timer(1000);
 	box.classList.remove(`${name}`);
@@ -181,5 +81,10 @@ async function animateNameOnLoad() {
 	const name = document.querySelector('.name');
 	const h1 = name.querySelector('h1');
 	h1.style.opacity = '1';
-	h1.style.fontSize = '5rem';
 }
+
+function swipeBody(XorY, percentage) {
+	const body = document.querySelector('body');
+	body.style.transform = `translate${XorY}(${percentage}%)`;
+}
+// TODO on mobile switch projects place with plans
