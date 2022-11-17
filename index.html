@@ -25,7 +25,7 @@
 				role="button"
 				tabindex="0"
 				aria-haspopup="true"
-				onclick="swipeBody('X',100)"
+				onclick="swipeBody() "
 			>
 				<h2>📍 About me</h2>
 			</div>
@@ -35,7 +35,7 @@
 				role="button"
 				tabindex="0"
 				aria-haspopup="true"
-				onclick="swipeBody('Y',-100)"
+				onclick="swipeBody()"
 			>
 				<h2>📊 My project</h2>
 			</div>
@@ -55,13 +55,15 @@
 				role="button"
 				tabindex="0"
 				aria-haspopup="true"
-				onclick="swipeBody('X',-100)"
+				onclick="swipeBody()"
 			>
 				<h2>📈 My plans</h2>
 			</div>
 		</div>
-		<div class="pageAbout"></div>
-		<div class="pageProjects"></div>
-		<div class="pagePlans"></div>
+		<div class="page">
+			<div class="close" onclick="swipeBody(true)">Back</div>
+		</div>
+		<!-- <div class="pageProjects"></div>
+		<div class="pagePlans"></div> -->
 	</body>
 </html>

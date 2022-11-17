@@ -1,3 +1,4 @@
+let vertical = false;
 if (Math.floor(window.innerHeight) > Math.floor(window.innerWidth)) {
 	console.log('phone');
 	// change main flex-direction to column
@@ -8,12 +9,18 @@ if (Math.floor(window.innerHeight) > Math.floor(window.innerWidth)) {
 	name.style.top = 'unset';
 	name.style.left = 'unset';
 	name.classList.add('placeholder');
+	vertical = true;
+	const pages = document.querySelectorAll('.page');
+	pages.forEach((page) => {
+		page.style.transform = 'translateX(100%)';
+	});
 } else {
 	console.log('desktop');
 	// change main flex-direction to row
 	const main = document.querySelector('.main');
 	main.style.flexDirection = 'row';
 }
+console.log(vertical);
 setDisplayMode();
 
 //TODO learn about that code (code from stack-overflow https://stackoverflow.com/questions/56393880/how-do-i-detect-dark-mode-using-javascript)
@@ -83,8 +90,23 @@ async function animateNameOnLoad() {
 	h1.style.opacity = '1';
 }
 
-function swipeBody(XorY, percentage) {
-	const body = document.querySelector('body');
-	body.style.transform = `translate${XorY}(${percentage}%)`;
+function swipeBody(ifBack) {
+	if (ifBack) {
+		if (vertical) {
+			const body = document.querySelector('body');
+			body.style.transform = `translateX(0)`;
+		} else {
+			const body = document.querySelector('body');
+			body.style.transform = `translateY(0)`;
+		}
+	} else {
+		if (vertical) {
+			const body = document.querySelector('body');
+			body.style.transform = `translateX(-100vw)`;
+		} else {
+			const body = document.querySelector('body');
+			body.style.transform = `translateY(-100vh)`;
+		}
+	}
 }
 // TODO on mobile switch projects place with plans
